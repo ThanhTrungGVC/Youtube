@@ -8,101 +8,7 @@
       </div>
 
       <div class="top-video">
-        <div class="vid-item">
-          <a href=""><img src="@/assets/thumbnail1.png" alt="" class="thumbnail"></a>
-          <div class="flex-div">
-            <img src="@/assets/Jack.png" alt="">
-            <div class="vid-info">
-              <a href="">Best chanel to learn coding that help you to be a web developer</a>
-              <p>Easy Turtorials</p>
-              <p>15k views &bull; 2 days</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="vid-item">
-          <a href=""><img src="@/assets/thumbnail2.png" alt="" class="thumbnail"></a>
-          <div class="flex-div">
-            <img src="@/assets/Jack.png" alt="">
-            <div class="vid-info">
-              <a href="">Best chanel to learn coding that help you to be a web developer</a>
-              <p>Easy Turtorials</p>
-              <p>15k views &bull; 2 days</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="vid-item">
-          <a href=""><img src="@/assets/thumbnail3.png" alt="" class="thumbnail"></a>
-          <div class="flex-div">
-            <img src="@/assets/Jack.png" alt="">
-            <div class="vid-info">
-              <a href="">Best chanel to learn coding that help you to be a web developer</a>
-              <p>Easy Turtorials</p>
-              <p>15k views &bull; 2 days</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="vid-item">
-          <a href=""><img src="@/assets/thumbnail4.png" alt="" class="thumbnail"></a>
-          <div class="flex-div">
-            <img src="@/assets/Jack.png" alt="">
-            <div class="vid-info">
-              <a href="">Best chanel to learn coding that help you to be a web developer</a>
-              <p>Easy Turtorials</p>
-              <p>15k views &bull; 2 days</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="vid-item">
-          <a href=""><img src="@/assets/thumbnail5.png" alt="" class="thumbnail"></a>
-          <div class="flex-div">
-            <img src="@/assets/Jack.png" alt="">
-            <div class="vid-info">
-              <a href="">Best chanel to learn coding that help you to be a web developer</a>
-              <p>Easy Turtorials</p>
-              <p>15k views &bull; 2 days</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="vid-item">
-          <a href=""><img src="@/assets/thumbnail6.png" alt="" class="thumbnail"></a>
-          <div class="flex-div">
-            <img src="@/assets/Jack.png" alt="">
-            <div class="vid-info">
-              <a href="">Best chanel to learn coding that help you to be a web developer</a>
-              <p>Easy Turtorials</p>
-              <p>15k views &bull; 2 days</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="vid-item">
-          <a href=""><img src="@/assets/thumbnail7.png" alt="" class="thumbnail"></a>
-          <div class="flex-div">
-            <img src="@/assets/Jack.png" alt="">
-            <div class="vid-info">
-              <a href="">Best chanel to learn coding that help you to be a web developer</a>
-              <p>Easy Turtorials</p>
-              <p>15k views &bull; 2 days</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="vid-item">
-          <a href=""><img src="@/assets/thumbnail8.png" alt="" class="thumbnail"></a>
-          <div class="flex-div">
-            <img src="@/assets/Jack.png" alt="">
-            <div class="vid-info">
-              <a href="">Best chanel to learn coding that help you to be a web developer</a>
-              <p>Easy Turtorials</p>
-              <p>15k views &bull; 2 days</p>
-            </div>
-          </div>
-        </div>
+        <Video v-for="video in listVideo" :vid="video" :key="video.id" />
       </div>
     </div>
   </div>
@@ -110,11 +16,91 @@
 
 <script>
 import Sidebar from "@/components/Sidebar.vue";
+import Video from "@/components/Video.vue";
 
 export default {
   name: "HomeView",
   components: {
     Sidebar,
+    Video
+  },
+  data() {
+    return {
+      listVideo: [
+        {
+          id: 1,
+          urlThumbnailImg: 'thumbnail1.png',
+          urlOwnerImg: 'Jack.png',
+          videoTitle: 'Best chanel to learn coding that help you to be a web developer',
+          nameOwner: 'Easy Turtorials',
+          views: '15k views',
+          timeUpload: '2 days'
+        },
+        {
+          id: 2,
+          urlThumbnailImg: 'thumbnail2.png',
+          urlOwnerImg: 'Jack.png',
+          videoTitle: 'Best chanel to learn coding that help you to be a web developer',
+          nameOwner: 'Easy Turtorials',
+          views: '15k views',
+          timeUpload: '2 days'
+        },
+        {
+          id: 3,
+          urlThumbnailImg: 'thumbnail3.png',
+          urlOwnerImg: 'Jack.png',
+          videoTitle: 'Best chanel to learn coding that help you to be a web developer',
+          nameOwner: 'Easy Turtorials',
+          views: '15k views',
+          timeUpload: '2 days'
+        },
+        {
+          id: 4,
+          urlThumbnailImg: 'thumbnail4.png',
+          urlOwnerImg: 'Jack.png',
+          videoTitle: 'Best chanel to learn coding that help you to be a web developer',
+          nameOwner: 'Easy Turtorials',
+          views: '15k views',
+          timeUpload: '2 days'
+        },
+        {
+          id: 5,
+          urlThumbnailImg: 'thumbnail5.png',
+          urlOwnerImg: 'Jack.png',
+          videoTitle: 'Best chanel to learn coding that help you to be a web developer',
+          nameOwner: 'Easy Turtorials',
+          views: '15k views',
+          timeUpload: '2 days'
+        },
+        {
+          id: 6,
+          urlThumbnailImg: 'thumbnail6.png',
+          urlOwnerImg: 'Jack.png',
+          videoTitle: 'Best chanel to learn coding that help you to be a web developer',
+          nameOwner: 'Easy Turtorials',
+          views: '15k views',
+          timeUpload: '2 days'
+        },
+        {
+          id: 7,
+          urlThumbnailImg: 'thumbnail7.png',
+          urlOwnerImg: 'Jack.png',
+          videoTitle: 'Best chanel to learn coding that help you to be a web developer',
+          nameOwner: 'Easy Turtorials',
+          views: '15k views',
+          timeUpload: '2 days'
+        },
+        {
+          id: 8,
+          urlThumbnailImg: 'thumbnail8.png',
+          urlOwnerImg: 'Jack.png',
+          videoTitle: 'Best chanel to learn coding that help you to be a web developer',
+          nameOwner: 'Easy Turtorials',
+          views: '15k views',
+          timeUpload: '2 days'
+        },
+      ]
+    }
   },
 };
 </script>
